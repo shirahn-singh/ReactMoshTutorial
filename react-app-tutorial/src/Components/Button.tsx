@@ -3,10 +3,10 @@ import React from "react";
 interface Props {
   children: string;
   onClickButton: () => void;
-  color: string;
+  color?: "primary" | "secondary" | "danger" | "success";
 }
 
-const Button = ({ children, onClickButton, color }: Props) => {
+const Button = ({ children, onClickButton, color = "secondary" }: Props) => {
   return (
     <div>
       <button

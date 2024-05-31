@@ -1,9 +1,15 @@
+import { useState } from "react";
+
 function ListGroup() {
   let items = ["Hello", "Goodbye", "South", "Africa"];
+
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   const getMessage = () => {
     return items.length === 0 && <p> Empty List</p>;
   };
+
+  //Event handler for click event
 
   return (
     <>
@@ -12,9 +18,15 @@ function ListGroup() {
       <ul className="list-group">
         {items.map((item, index) => (
           <li
-            className="list-group-item"
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
             key={item}
-            onClick={() => console.log(item.valueOf(), index + " was clicked")}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
           >
             {item}
           </li>

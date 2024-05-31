@@ -10,8 +10,14 @@ function ListGroup() {
       <h1>New list of items</h1>
       {getMessage()}
       <ul className="list-group">
-        {items.map((item) => (
-          <li key={item}>{item}</li>
+        {items.map((item, index) => (
+          <li
+            className="list-group-item"
+            key={item}
+            onClick={() => console.log(item.valueOf(), index + " was clicked")}
+          >
+            {item}
+          </li>
         ))}
       </ul>
     </>

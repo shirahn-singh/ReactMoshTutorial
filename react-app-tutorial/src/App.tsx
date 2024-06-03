@@ -8,10 +8,14 @@ function App() {
   let items = ["Durban", "Cape town", "Joburg", "Stellenbosch"];
   let heading = "Cities";
 
-  const [alertVisibility, toggleButton] = useState(false);
+  let [alertVisibility, setAlertVisibility] = useState(false);
 
   const handleSelectItem = (item: string) => {
     console.log(item);
+  };
+
+  const closeAlert = () => {
+    setAlertVisibility(false);
   };
   return (
     <div>
@@ -21,16 +25,13 @@ function App() {
         onSelectItem={handleSelectItem}
       />
       <br></br>
-      <Alert visibility={alertVisibility}>
+      <Alert visibility={alertVisibility} onClose={closeAlert}>
         This is anotehr test <h1>HELLO THERER TOUNG ONE </h1>
       </Alert>
 
       <br></br>
 
-      <Button
-        color="primary"
-        onClickButton={() => toggleButton(!alertVisibility)}
-      >
+      <Button color="primary" onClickButton={() => setAlertVisibility(true)}>
         My button
       </Button>
     </div>

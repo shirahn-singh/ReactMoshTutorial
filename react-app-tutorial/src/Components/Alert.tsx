@@ -8,7 +8,10 @@ interface AlertProps {
 
 const Alert = ({ children, visibility, onClose }: AlertProps) => {
   return visibility ? (
-    <div className={"alert alert-primary"} role="alert">
+    <div
+      className={"alert alert-primary d-flex justify-content-between"}
+      role="alert"
+    >
       {children}
       <button
         type="button"

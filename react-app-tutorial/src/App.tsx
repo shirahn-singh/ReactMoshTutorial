@@ -24,9 +24,11 @@ function App() {
         heading={heading}
         onSelectItem={handleSelectItem}
       />
+
       <br></br>
+
       <Alert visibility={alertVisibility} onClose={closeAlert}>
-        This is anotehr test <h1>HELLO THERER TOUNG ONE </h1>
+        This is an alert
       </Alert>
 
       <br></br>

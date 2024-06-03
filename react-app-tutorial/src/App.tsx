@@ -2,10 +2,13 @@ import ListGroup from "./Components/ListGroup";
 
 import Alert from "./Components/Alert";
 import Button from "./Components/Button";
+import { useState } from "react";
 
 function App() {
   let items = ["Durban", "Cape town", "Joburg", "Stellenbosch"];
   let heading = "Cities";
+
+  const [alertVisibility, toggleButton] = useState(false);
 
   const handleSelectItem = (item: string) => {
     console.log(item);
@@ -17,11 +20,17 @@ function App() {
         heading={heading}
         onSelectItem={handleSelectItem}
       />
-      <Alert>
+      <br></br>
+      <Alert visibility={alertVisibility}>
         This is anotehr test <h1>HELLO THERER TOUNG ONE </h1>
       </Alert>
 
-      <Button color="primary" onClickButton={() => console.log("Clicked")}>
+      <br></br>
+
+      <Button
+        color="primary"
+        onClickButton={() => toggleButton(!alertVisibility)}
+      >
         My button
       </Button>
     </div>
